@@ -1,0 +1,8 @@
+{
+  module: "qr-code",
+  position: "top_center",
+  config: {
+    text: "https://example.com",
+    size: 200
+  }
+}
