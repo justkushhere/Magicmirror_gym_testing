@@ -1,0 +1,52 @@
+/* Magic Mirror Config File */
+
+var config = {
+  address: "localhost",
+  port: 8080,
+  language: "en",
+  timeFormat: 12,
+  units: "metric",
+
+  modules: [
+    {
+      module: "clock",
+      position: "top_left"
+    },
+    {
+      module: "holidays",
+      position: "top_center",
+      header: "Upcoming Holidays in Singapore",
+      config: {
+        countryCode: "SG"
+      }
+    },
+    {
+      module: "MMM-QRCode",
+      position: "top_right",
+      config: {
+        ssid: "your-wifi-ssid",
+        password: "your-wifi-password",
+        size: 200
+      }
+    },
+    {
+      module: "MMM-SG-Bus",
+      position: "bottom_left",
+      config: {
+        busStopIds: ["83139", "83149", "83159"],
+        serviceNumbers: ["155", "159", "123M"],
+        maxResults: 3,
+        showServiceNumber: true,
+        showArrivalTime: true
+      }
+    },
+    {
+      module: "compliments",
+      position: "bottom_bar",
+      classes: "small dimmed"
+    }
+  ]
+};
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== "undefined") {module.exports = config;}
