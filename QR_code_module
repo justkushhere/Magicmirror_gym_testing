@@ -1,0 +1,16 @@
+Module.register("qr-code", {
+
+  defaults: {
+    text: "https://example.com",
+    size: 200
+  },
+
+  getDom: function() {
+    var qr = document.createElement("img");
+    var url = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(this.config.text) + "&size=" + this.config.size + "x" + this.config.size;
+    qr.src = url;
+    qr.style.width = this.config.size + "px";
+    qr.style.height = this.config.size + "px";
+    return qr;
+  }
+});
