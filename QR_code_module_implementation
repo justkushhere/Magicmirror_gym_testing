@@ -1,8 +1,8 @@
 {
   module: "qr-code",
-  position: "top_center",
+  position: "bottom_right",
   config: {
-    text: "https://example.com",
+    text: "https://open.spotify.com/playlist/2MZZztEgaASDq83Hn9075S?si=b09ddbdc0c0c466a&pt=1848f577da8fd77e9e7846a0950a90a9",
     size: 200
   }
 }
