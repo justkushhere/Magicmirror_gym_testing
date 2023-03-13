@@ -6,11 +6,22 @@ Module.register("qr-code", {
   },
 
   getDom: function() {
+    var wrapper = document.createElement("div");
+    var label = document.createElement("div");
     var qr = document.createElement("img");
+    
+    // Set the text label above the QR code
+    label.innerHTML = "Spotify Playlist:";
+    label.style.marginBottom = "10px";
+    wrapper.appendChild(label);
+    
+    // Generate the QR code and set its size
     var url = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(this.config.text) + "&size=" + this.config.size + "x" + this.config.size;
     qr.src = url;
     qr.style.width = this.config.size + "px";
     qr.style.height = this.config.size + "px";
-    return qr;
+    wrapper.appendChild(qr);
+    
+    return wrapper;
   }
 });
